@@ -1,0 +1,63 @@
+AGGREGATE FUNCTIONS 
+
+- AVG()
+- SUM()
+- MIN()
+- MAX()
+- COUNT()
+
+ANALYTIC FUNCTIONS / WINDOW FUNCTIONS
+
+- ROW_NUMBER
+- RANK()
+- DENSE_RANK()
+- LAG()
+- LEAD()
+- PERCENT_RANK()
+
+
+JOINS
+
+- INNER JOIN
+    - EQUI JOIN
+    - THETA JOIN
+
+- LEFT JOIN
+- RIGHT JOIN
+- FULL OUTER JOIN
+- CROSS JOIN
+- SELF JOIN
+
+CONSTRAINTS
+
+- PRIMARY KEY
+- FORIEGN KEY
+- NOT NULL
+- UNIQUE
+- CHECK
+- DEFAULT
+
+Indexing and Hashing
+
+For a dbms, consisting many rows will decrease performance because it scans each and every row for the requirement. That's why we have 2 concepts called Indexing and Hashing. 
+
+These are only used for retreival of data.
+
+B-Tree and B+ Tree
+
+These two organize the data in form of trees so that it will be easier for data reads.
+But even B tree checks all nodes
+
+That's why B+ tree is there, it optimizes the tree by arranging the elements in an orderly manner.
+
+
+
+
+
+
+
+
+
+
+
+
