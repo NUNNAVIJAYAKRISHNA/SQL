@@ -252,3 +252,8 @@ SELECT *, DENSE_RANK() OVER (
         ORDER BY marks DESC
     ) as std_rank
 FROM students; -- solves repeated scores problem
+
+SELECT *, LAG(marks) OVER (ORDER BY marks) as lag_col FROM students;
+
+SELECT *, LEAD(marks) OVER ( ORDER BY marks ) as lead_col FROM students;
+
