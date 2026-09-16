@@ -201,3 +201,54 @@ SELECT UPPER(std_name) FROM students;
 SELECT LOWER(std_name) FROM students;
 
 SELECT CONCAT(std_name, ' - ',  department) FROM students;
+
+
+ALTER TABLE students
+MODIFY marks DECIMAL;
+
+ALTER TABLE students DROP cgpa;
+ALTER TABLE students
+ADD cgpa DECIMAL(3, 2);
+
+UPDATE students
+SET cgpa = marks/10;
+
+SELECT * FROM students;
+
+-- mod, floor, ceil pending
+
+SELECT CURRENT_DATE();
+
+SELECT CURRENT_TIME();
+
+SELECT CURRENT_TIMESTAMP();
+
+SELECT YEAR(CURRENT_DATE());
+
+SELECT MONTH(CURRENT_DATE());
+
+SELECT DAYOFWEEK(CURRENT_DATE());
+
+SELECT DAYNAME(CURRENT_DATE());
+
+SELECT std_name, marks,
+CASE 
+    WHEN marks >= 90 THEN 'Excellent' 
+    WHEN marks >= 80 THEN 'Very Good'
+    WHEN marks >= 70 THEN 'Good'
+    WHEN marks >= 50 THEN 'Average'
+    ELSE 'Fail'
+END AS grade 
+FROM students;
+
+SELECT *,
+ROW_NUMBER() OVER (
+    ORDER BY marks DESC
+) as row_num,
+RANK() OVER ( ORDER BY marks DESC ) as std_rank
+FROM students;
+
+SELECT *, DENSE_RANK() OVER (
+        ORDER BY marks DESC
+    ) as std_rank
+FROM students; -- solves repeated scores problem
